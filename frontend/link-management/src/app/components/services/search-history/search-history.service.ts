@@ -6,12 +6,12 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class SearchHistoryService {
 
-  private storageKey = 'searchHistory';
-  private searchHistorySubject = new BehaviorSubject<string[]>(this.getSearchHistory());
+  private storageKey = 'searchHistory'; // LocalStorage'da saklanacak anahtar
+  private searchHistorySubject = new BehaviorSubject<string[]>(this.getSearchHistory());  // Arama geçmişinin güncel durumunu takip eden BehaviorSubject
 
   constructor() { }
 
-  addSearchTerm(term: string): void {
+  public addSearchTerm(term: string): void {
     const history = this.getSearchHistory();
     
     if (!history.includes(term)) {
@@ -21,16 +21,16 @@ export class SearchHistoryService {
     }
   }
 
-  getSearchHistory() {
-    return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+  public getSearchHistory() {
+    return JSON.parse(localStorage.getItem(this.storageKey) || '[]');  // Eğer geçmiş yoksa boş dizi döndür
   }
 
-  clearHistory(): void {
+  public clearHistory(): void {
     localStorage.removeItem(this.storageKey);
     this.searchHistorySubject.next([]);  // Boş listeyi yayında
   }
 
-  getSearchHistoryObservable() {
+  public getSearchHistoryObservable() {
     return this.searchHistorySubject.asObservable();  // Observable döner
   }
 }
