@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { SearchHistoryService } from '../../services/search-history/search-history.service';
 
 @Component({
-  selector: 'app-table-header',
-  templateUrl: './table-header.component.html',
-  styleUrls: ['./table-header.component.scss']
+  selector: 'app-search-history',
+  templateUrl: './search-history.component.html',
+  styleUrls: ['./search-history.component.scss']
 })
-export class TableHeaderComponent implements OnInit {
+export class SearchHistoryComponent implements OnInit {
 
   public searchHistory: string[] = [];
   public historyButton: boolean = false;
