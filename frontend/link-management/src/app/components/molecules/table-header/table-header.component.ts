@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchHistoryService } from '../../services/search-history/search-history.service';
 
 @Component({
   selector: 'app-table-header',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TableHeaderComponent implements OnInit {
 
-  constructor() { }
+  public searchHistory: string[] = [];
+  public historyButton: boolean = false;
 
-  ngOnInit(): void {
+  constructor(private searchHistoryService: SearchHistoryService) {}
+
+  ngOnInit() {
+    this.searchHistoryService.getSearchHistoryObservable()
+      .subscribe(history => {
+        this.searchHistory = history;
+      });
   }
 
+  public clearHistory() {
+    this.searchHistoryService.clearHistory();
+  }
+  
+  public historyHole(){
+    this.historyButton = !this.historyButton
+  }
+  
 }

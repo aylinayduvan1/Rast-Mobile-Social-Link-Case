@@ -15,11 +15,11 @@ import {InputTextModule} from 'primeng/inputtext';
 import { PaginatorModule } from 'primeng/paginator';
 import { ButtonComponent } from './components/atoms/button/button.component';
 import { InputComponent } from './components/atoms/input/input.component';
-import { ImageComponent } from './components/atoms/image/image.component';
+import { ImageComponent } from './components/atoms/filter-button/filter-buttoncomponent';
 import { SocialButtonsComponent } from './components/molecules/social-buttons/social-buttons.component';
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
 import { TableHeaderComponent } from './components/molecules/table-header/table-header.component';
-import { TableActionsComponent } from './components/molecules/table-actions/table-actions.component';
+import { LoginAnimationComponent } from './components/molecules/login-animation/login-animationcomponent';
 import { NavbarComponent } from './components/organisms/navbar/navbar.component';
 import { TableComponent } from './components/organisms/table/table.component';
 import { MainTemplateComponent } from './components/template/main-template/main-template.component';
@@ -31,8 +31,14 @@ import { LinkValidationDirective } from './components/directives/link-validation
 import {ToastModule} from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { SearchPipe } from './components/pipes/search/search.pipe';
+import {OverlayPanelModule} from 'primeng/overlaypanel';
 
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 
+export function playerFactory() {
+  return player;
+}
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +48,7 @@ import { SearchPipe } from './components/pipes/search/search.pipe';
     SocialButtonsComponent,
     SearchBarComponent,
     TableHeaderComponent,
-    TableActionsComponent,
+    LoginAnimationComponent,
     NavbarComponent,
     TableComponent,
     MainTemplateComponent,
@@ -65,7 +71,10 @@ import { SearchPipe } from './components/pipes/search/search.pipe';
     DialogModule,
     InputTextModule,
     PaginatorModule,
-    ToastModule
+    ToastModule,
+    OverlayPanelModule,
+    LottieModule.forRoot({ player: playerFactory }),
+
   ],
   providers: [AuthGuard, MessageService],
   bootstrap: [AppComponent]

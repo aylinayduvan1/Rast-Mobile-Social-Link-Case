@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component} from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
-import { LinksService } from '../../services/link/links.service';
-import { HttpClient } from '@angular/common/http';
+import { AuthData } from 'src/app/models/auth/auth';
 
 @Component({
   selector: 'app-login',
@@ -10,24 +8,15 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  
-  username: string = '';
-  password: string = '';
+  public authData: AuthData = new AuthData();
 
-  constructor(private http: HttpClient, private router: Router) {}
+  constructor(private authService: AuthService) {}
 
-  onLogin() {
-    this.http.post<any>('http://localhost:5000/api/login', { username: this.username, password: this.password })
-      .subscribe(
-        response => {
-          if (response.message === 'Login successful') {
-            localStorage.setItem('isLoggedIn', 'true');
-            this.router.navigate(['/links']);
-          }
-        },
-        error => {
-          console.error('Login failed', error);
-        }
-      );
+  public async onLogin() {
+    try {
+      await this.authService.login(this.authData);
+    } catch (error) {
+      console.error('Login failed', error);
+    }
   }
 }

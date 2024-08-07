@@ -41,7 +41,7 @@ Frontend kısmında Angular, Bootstrap, PrimeNG, RxJS, TypeScript, HTML ve SCSS 
    node server.js
    ```
 
-5. API'yi `http://localhost:3000` adresinde çalışır durumda bulun.
+5. API'yi `http://localhost:5000/api/links` adresinde çalışır durumda bulun.
 
 ### Frontend Kurulumu
 
@@ -65,7 +65,7 @@ Proje, frontend ve backend olarak iki ana bileşenden oluşmaktadır. Frontend k
 
 Frontend, Atomic Design prensiplerine uygun olarak atom, molekül, organizma, şablon ve sayfa component'leri içerir:
 
-- **Atom Component'ler:** Button, Input
+- **Atom Component'ler:** Button, Input, FilterButton
 - **Molekül Component'ler:** SearchBar, SocialButton
 - **Organizma Component'ler:** LoginForm, Navbar, Table
 - **Şablon Component'ler:** MainTemplate
@@ -98,7 +98,9 @@ Veritabanı tasarımı, sosyal medya linklerini saklamak üzere `links` tablosun
 - **name:** Sosyal medya adı.
 - **url:** Link URL'si.
 - **description:** Link açıklaması.
+
   Veritabanı tasarımı, sosyal medya girişi için `users` tablosunu içerir ve bu tablo aşağıdaki alanları içerir:
+
 - **id:** Otomatik artan birincil anahtar.
 - **username:** Kullanıcı adı.
 - **password:** kullanıcı şifresi.

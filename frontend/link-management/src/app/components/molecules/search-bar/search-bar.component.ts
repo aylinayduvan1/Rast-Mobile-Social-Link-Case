@@ -1,7 +1,6 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Link } from 'src/app/models/model';
-import { LinksService } from '../../services/link/links.service';
-import { Observable } from 'rxjs';
+// src/app/components/search-bar/search-bar.component.ts
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { SearchHistoryService } from '../../services/search-history/search-history.service';
 
 @Component({
   selector: 'app-search-bar',
@@ -12,20 +11,36 @@ export class SearchBarComponent {
   @Input() style?: string;
   @Input() inputStyle?: string;
   @Output() openModal = new EventEmitter<void>();
-  public searchText : string = ''
-  @Output() searchTextChanged = new EventEmitter<string>();
+  @Output() searchTextChanged = new EventEmitter<{ text: string, criteria: string }>();
 
+  public searchText: string = '';
+  public selectedCriteria: string = 'all'; 
+  public searchOptions: { label: string, value: string }[] = [
+    { label: 'Tümü', value: 'all' },
+    { label: 'Link', value: 'url' },
+    { label: 'İsim', value: 'name' },
+  ];
 
-  onOpenModal(): void {
+  constructor(private searchHistoryService: SearchHistoryService) {}
+
+ public onSearch(): void {
+    if (this.searchText.trim()) { 
+      this.searchHistoryService.addSearchTerm(this.searchText.trim());
+    }
+    this.searchTextChanged.emit({ text: this.searchText, criteria: this.selectedCriteria });
+  }
+
+  public onClear(): void {
+    this.searchText = '';
+    this.searchTextChanged.emit({ text: this.searchText, criteria: this.selectedCriteria });
+  }
+
+ public onOpenModal(): void {
     this.openModal.emit();
   }
 
-  onSearch(): void {
-    this.searchTextChanged.emit(this.searchText);
-  }
-
-  onClear(): void {
-    this.searchText = '';
-    this.searchTextChanged.emit(this.searchText);
+  public onCriteriaChange(criteria: string): void {
+    this.selectedCriteria = criteria;
+    this.searchTextChanged.emit({ text: this.searchText, criteria: this.selectedCriteria });
   }
 }

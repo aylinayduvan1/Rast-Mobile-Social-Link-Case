@@ -1,33 +1,34 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { tap } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { ServerAuthData } from 'src/app/models/auth/auth';
+import { MessageService } from 'primeng/api';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = '/api';
 
-  constructor(private http: HttpClient) {}
+  private apiUrl = 'http://localhost:5000/api/login';
 
-  login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/login`, { username, password })
-      .pipe(
-        tap(response => {
-          if (response.auth) {
-            localStorage.setItem('token', response.token);
-          }
-        })
-      );
+  constructor(private http: HttpClient, private router: Router , private messageService: MessageService) {}
+
+  public login(authData: ServerAuthData){
+    debugger
+    return this.http.post<any>(this.apiUrl, authData).toPromise()
+      .then(response => {
+        if (response.message === 'Login successful') {
+          localStorage.setItem('isLoggedIn', 'true');
+          this.router.navigate(['/links']);
+        }
+      })
+      .catch(error => {
+        this.messageService.add({ severity: 'error', summary: 'Kullanıcı adı veya şifre yanlış' });
+      });
   }
-  
 
-  logout(): void {
-    localStorage.removeItem('token');
-  }
-
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
+   public logout() {
+    localStorage.removeItem('isLoggedIn');
+    this.router.navigate(['/login']);
   }
 }

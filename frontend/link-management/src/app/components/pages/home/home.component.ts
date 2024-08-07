@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private authService : AuthService) { }
 
-  ngOnInit(): void {
+  lottieOptions: any;
+
+  ngOnInit() {
+    this.lottieOptions = {
+      path: 'assets/exit.json',
+      renderer: 'svg',
+      loop: true,
+      autoplay: true
+    };
   }
 
+ public async logout(){
+  await this.authService.logout();
+ }
 }

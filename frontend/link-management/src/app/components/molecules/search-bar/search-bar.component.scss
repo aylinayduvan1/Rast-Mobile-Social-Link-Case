@@ -5,14 +5,15 @@ $button-color: #744BFC;
 
   .table-header {
     ::ng-deep .p-inputgroup-addon:last-child,
-    .p-inputgroup button:last-child,
-    .p-inputgroup input:last-child,
-    .p-inputgroup > .p-inputwrapper:last-child > .p-component,
-    .p-inputgroup > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+    .search-filter-container .p-inputgroup button:last-child,
+    .search-filter-container .p-inputgroup input:last-child,
+    .search-filter-container .p-inputgroup > .p-inputwrapper:last-child > .p-component,
+    .search-filter-container .p-inputgroup > .p-inputwrapper:last-child > .p-component > .p-inputtext {
       border-top-right-radius: 30px !important;
       border-bottom-right-radius: 30px !important;
       background-color: $button-color;
       height: 40px;
+      
     }
   }
 
@@ -64,12 +65,12 @@ $button-color: #744BFC;
     }
   }
   
-  .p-inputgroup{
+  .search-filter-container .p-inputgroup{
     width: 100% !important;
   }
 }
 
-.p-inputgroup {
+.search-filter-container .p-inputgroup {
   position: relative;
 }
 

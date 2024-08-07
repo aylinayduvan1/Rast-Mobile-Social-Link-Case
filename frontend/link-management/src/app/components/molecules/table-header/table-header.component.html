@@ -1,1 +1,17 @@
-<p>table-header works!</p>
+<p (click)="historyHole()">
+  {{ historyButton ? "Geçmişi gizle " : "Geçmişi göster" }}
+</p>
+<div class="search-history" *ngIf="historyButton">
+  <h5>Son Aramalar</h5>
+  <ul>
+    <li *ngFor="let term of searchHistory">{{ term }}</li>
+  </ul>
+  <button
+    pButton
+    type="button"
+    class="clean-button"
+    label="Temizle"
+    style="font-size: 13px"
+    (click)="clearHistory()"
+  ></button>
+</div>

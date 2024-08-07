@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ImageComponent } from './image.component';
+import { LoginAnimationComponent } from './login-animationcomponent';
 
-describe('ImageComponent', () => {
-  let component: ImageComponent;
-  let fixture: ComponentFixture<ImageComponent>;
+describe('LoginAnimationComponent', () => {
+  let component: LoginAnimationComponent;
+  let fixture: ComponentFixture<LoginAnimationComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ImageComponent ]
+      declarations: [ LoginAnimationComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ImageComponent);
+    fixture = TestBed.createComponent(LoginAnimationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

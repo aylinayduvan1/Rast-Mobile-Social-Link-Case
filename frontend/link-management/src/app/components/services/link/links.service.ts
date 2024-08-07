@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { BehaviorSubject, catchError, firstValueFrom, map, Observable, of, startWith, switchMap, throwError } from 'rxjs';
-import { Link } from 'src/app/models/model';
 import { MessageService } from 'primeng/api';
+import { Link } from 'src/app/models/links/links';
 
 @Injectable({
   providedIn: 'root'

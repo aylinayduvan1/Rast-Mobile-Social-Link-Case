@@ -1,8 +1,8 @@
 import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { BehaviorSubject, first, firstValueFrom, Observable, of } from 'rxjs';
-import { Link } from 'src/app/models/model';
 import { LinksService } from '../../services/link/links.service';
 import { NgForm } from '@angular/forms';
+import { Link } from 'src/app/models/links/links';
 @Component({
   selector: 'app-main-template',
   templateUrl: './main-template.component.html',
@@ -15,6 +15,33 @@ export class MainTemplateComponent {
   public isModalVisible: boolean = false;
   public isEditing: boolean = false;
   public selectedLink$ = new BehaviorSubject<Link | null>(null);
+
+
+  public searchText: string = '';
+  public selectedCriteria: string = 'all'; // Default criteria
+
+  constructor(private service: LinksService) {
+    this.list$ = this.service.list$;
+  }
+
+  onSearch(searchText: string, criteria: string): void {
+    this.searchText = searchText;
+    this.selectedCriteria = criteria;
+  }
+
+  onClear(): void {
+    this.searchText = '';
+    this.selectedCriteria = 'all'; // Reset criteria to 'all'
+  }
+
+  // onSearch(searchParams: { text: string, criteria: string }): void {
+  //   console.log('Search Params Received');
+  //   console.log('Search Text:', searchParams.text);
+  //   console.log('Search Criteria:', searchParams.criteria);
+    
+  //   this.searchText = searchParams.text;
+  //   this.searchCriteria = searchParams.criteria; // Update criteria
+  // }
 
 
   openModal(link?: Link) {
@@ -74,16 +101,6 @@ export class MainTemplateComponent {
   }
 
 
-  public searchText: string = '';
-
-  constructor(private service: LinksService) {
-    this.list$ = this.service.list$;
-    this.refreshList();
-  }
-
-  onSearch(searchText: string): void {
-    this.searchText = searchText;
-  }
 
 }
 
