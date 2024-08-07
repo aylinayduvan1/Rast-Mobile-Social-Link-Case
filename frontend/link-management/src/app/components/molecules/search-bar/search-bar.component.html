@@ -1,0 +1,12 @@
+<div class="col-12 table-header d-flex justify-content-between mb-2 p-0">
+    <div class="p-inputgroup" style="width: 30%; position: relative;">
+        <input type="text" class="w-25 px-4 border-0 searchbar-input" pInputText placeholder="Search objects..." [(ngModel)]="searchText">
+        <p *ngIf="searchText" class="clear-icon" (click)="onClear()">
+            <i class="pi pi-times"></i>
+        </p>
+        <button type="button" pButton pRipple icon="pi pi-search" (click)="onSearch()" styleClass="p-button-warn"></button>
+    </div>
+    
+    
+    <button pButton icon="pi pi-plus" class="new-link-button" label="Yeni Hesap Ekle" style="font-size: 14px;" (click)="onOpenModal()"></button>
+</div>

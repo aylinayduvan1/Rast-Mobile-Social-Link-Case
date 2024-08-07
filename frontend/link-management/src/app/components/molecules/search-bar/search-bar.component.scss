@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+$primary-color: #EFF2FF;
+$button-color: #744BFC; 
+
+  .table-header {
+    ::ng-deep .p-inputgroup-addon:last-child,
+    .p-inputgroup button:last-child,
+    .p-inputgroup input:last-child,
+    .p-inputgroup > .p-inputwrapper:last-child > .p-component,
+    .p-inputgroup > .p-inputwrapper:last-child > .p-component > .p-inputtext {
+      border-top-right-radius: 30px !important;
+      border-bottom-right-radius: 30px !important;
+      background-color: $button-color;
+      height: 40px;
+    }
+  }
+
+  input:focus {
+    outline: none; 
+    box-shadow: none; 
+    border-color: initial;
+  }
+
+  ::ng-deep .new-link-button .p-button-label {
+    font-size: 14px !important;
+    font-family: 'Poppins', sans-serif;
+    }
+
+   .new-link-button {
+    background-color: $button-color !important;
+    border: none;
+    color: white !important;
+    font-size: 1rem;
+    border-radius: 30px;
+    width: 16%;
+    height: 40px;
+  
+    .pi {
+      font-size: 1.2rem;
+      color: white;
+    }
+  }
+
+.searchbar-input{
+  border-top-left-radius: 30px !important; 
+  border-bottom-left-radius: 30px !important; 
+  height: 40px;
+}
+
+@media screen and (max-width: 1155px) {
+  ::ng-deep .new-link-button .p-button-label {
+    font-size: 9px !important;
+   
+    }
+}
+
+@media screen and (max-width: 992px) {
+  ::ng-deep .new-link-button{
+    width: 3.6rem !important;
+  
+   .p-button-label {
+      display: none;   
+    }
+  }
+  
+  .p-inputgroup{
+    width: 100% !important;
+  }
+}
+
+.p-inputgroup {
+  position: relative;
+}
+
+.searchbar-input {
+  padding-right: 2.5rem; /* Sağdaki ikon için boşluk bırak */
+}
+
+.clear-icon {
+  position: absolute;
+  top: 25%;
+  right: 3.2rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #999;
+  font-size: 1px;
+  z-index: 1;
+}
+
+.clear-icon i {
+  font-size: 0.8rem; /* İkon boyutunu ayarlayın */
+}
