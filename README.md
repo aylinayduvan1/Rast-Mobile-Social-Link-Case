@@ -2,7 +2,9 @@
 
 ## Proje Tanımı ve Amacı
 
-Bu proje, kullanıcıların sosyal medya linklerini ve bu linklere ait bilgileri yönetebilecekleri bir projedir. Uygulama, atomic design prensiplerine uygun olarak geliştirilmiş ve directive, pipe, guard, resolver vb kullanımlarını içermektedir. Bu proje ile sosyal medya linkerli üzerinde CRUD işlemlerinin yapılması hedeflenmiştir.
+Bu proje, kullanıcıların sosyal medya linklerini ve bu linklere ait bilgileri yönetebilecekleri bir projedir. Uygulama, atomic design prensiplerine uygun olarak geliştirilmiş ve directive, pipe, guard, resolver vb kullanımlarını içermektedir. Bu proje ile sosyal medya linkerli üzerinde CRUD işlemlerinin yapılması hedeflenmiştir. Backend de nodejs ile login ve CRUD işlemleri için API'ler oluşturulmuştur. Bonus olarak linklerin listelediği tabloda linkin olduğu satıra tıklayınca
+ilgili urlin olduğu siteye yönlendirilip ziyaret edilebilmektedir. Ziyaret edilen linklerin bilgisi localde saklanıp anasayfanın sağında
+son ziyaret edilenler başlığı altında listelenmektedir.
 
 ## Teknolojiler ve Araçlar
 
