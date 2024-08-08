@@ -140,3 +140,15 @@ Bu adımları takip ederek, API isteklerini Postman üzerinde kolayca test edebi
 ## Sonuç
 
 Bu doküman, Sosyal Medya ve Link Yönetim Uygulaması'nın genel hatlarını ve kurulum talimatlarını içermektedir. Projenin daha detaylı incelemesi ve geliştirilmesi için kaynak kodları ve ilgili dökümantasyonları inceleyebilirsiniz. Proje, kullanıcıların sosyal medya linklerini yönetmelerine olanak tanıyan kullanıcı dostu ve dinamik bir platform sunmaktadır.
+
+
+![image](https://github.com/user-attachments/assets/b6bb98c9-5e5b-447a-96f5-3f7ac4313190)
+![image](https://github.com/user-attachments/assets/fe0a278c-7a07-45f0-b5f5-c92f4ba6eb45)
+![image](https://github.com/user-attachments/assets/c8b75fbf-d089-4cf6-a9c0-058028db3b5c)
+![image](https://github.com/user-attachments/assets/067e71cf-3bf1-458b-9ff8-d0b5a8ec09a3)
+![image](https://github.com/user-attachments/assets/9bd7f54c-d567-46d7-8596-55a059288b66)
+![image](https://github.com/user-attachments/assets/2ce36e8b-a308-49be-be27-c874d5460835)
+![image](https://github.com/user-attachments/assets/4d41e106-283c-466e-b140-a4de069f1294)
+![image](https://github.com/user-attachments/assets/26c2b47b-325d-4da4-b8f8-4de28e5c6b90)
+![image](https://github.com/user-attachments/assets/a2a0cea4-9e2a-4748-84e4-29b1df1cbe26)
+
