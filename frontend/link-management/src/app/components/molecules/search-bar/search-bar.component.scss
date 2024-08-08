@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-@import 'src/styles.scss';
-
+$primary-color: #EFF2FF;
+$button-color: #744BFC; 
 
   .table-header {
     ::ng-deep .p-inputgroup-addon:last-child,
@@ -75,7 +75,7 @@
 }
 
 .searchbar-input {
-  padding-right: 2.5rem;
+  padding-right: 2.5rem; 
 }
 
 .clear-icon {
@@ -102,5 +102,5 @@ a {
 
 a i {
   font-size: 1.5rem; 
-  color: $white-color; 
+  color: #ffffff; 
 }

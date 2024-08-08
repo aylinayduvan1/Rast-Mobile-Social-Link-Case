@@ -1,7 +1,10 @@
-@import 'src/styles.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+$primary-color: #EFF2FF;
+$button-color: #744BFC;
 
 ::ng-deep .social-buttons .p-button.p-button-icon-only {
-        background-color: $button-color !important;
+        background-color: #744BFC !important;
         border: none;
         color: white !important;
         font-size: 1rem;
@@ -36,7 +39,7 @@
 
 //hamburger menü
 .navbar {
-  background-color: $white-color;
+  background-color: #ffffff;
   padding-left: 6rem;
   padding-right: 6rem;
 
@@ -84,6 +87,8 @@
   .navbar{
     padding: 0px;
   }
+
+
 }
 
 

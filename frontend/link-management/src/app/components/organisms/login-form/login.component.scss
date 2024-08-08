@@ -1,7 +1,5 @@
-@import 'src/styles.scss';
-
 .login-container {
-    background-color: $primary-color;
+    background-color: #EFF2FF;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -10,7 +8,7 @@
   }
   
   .card {
-    background-color: $white-color;
+    background-color: #ffffff;
     height: 400px;
     width: 400px;
     display: flex;
@@ -50,7 +48,7 @@
     padding: 10px;
     border: none;
     border-radius: 39px;
-    background-color: $button-color;
+    background-color: #744BFC;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
