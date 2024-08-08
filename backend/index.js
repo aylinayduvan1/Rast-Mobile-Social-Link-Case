@@ -6,7 +6,7 @@ const cors = require('cors');
 const app = express();
 const port = 5000;
 
-// MySQL bağlantısını yapılandırın
+// MySQL bağlantısını yapılandırma
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   database: 'social_media_links'
 });
 
-// Bağlantıyı kontrol edin
+// Bağlantıyı kontrol etme
 db.connect((err) => {
   if (err) {
     console.error('MySQL bağlantı hatası:', err);
@@ -46,7 +46,7 @@ app.post('/api/login', (req, res) => {
   });
 });
 
-// CRUD işlemleri için API uç noktalarını oluşturun
+
 app.get('/api/links', (req, res) => {
   db.query('SELECT * FROM links', (err, results) => {
     if (err) {

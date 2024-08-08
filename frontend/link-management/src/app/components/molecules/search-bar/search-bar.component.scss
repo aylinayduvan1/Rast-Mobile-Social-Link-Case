@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-$primary-color: #EFF2FF;
-$button-color: #744BFC; 
+@import 'src/styles.scss';
+
 
   .table-header {
     ::ng-deep .p-inputgroup-addon:last-child,
@@ -102,5 +102,5 @@ a {
 
 a i {
   font-size: 1.5rem; 
-  color: #ffffff; 
+  color: $white-color; 
 }

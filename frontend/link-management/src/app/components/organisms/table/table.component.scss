@@ -1,5 +1,5 @@
-$light-color: #EFF2FF;
-$dark-color: #744BFC;
+@import 'src/styles.scss';
+
 
 :host ::ng-deep .p-datatable {
     border: 1px solid #EAEAEA;
@@ -8,11 +8,11 @@ $dark-color: #744BFC;
   }
   
 ::ng-deep .p-datatable .p-datatable-tbody tr:nth-child(odd) {
-    background-color: #ffffff; 
+    background-color: $white-color; 
   }
   
  ::ng-deep  .p-datatable .p-datatable-tbody tr:nth-child(even) {
-    background-color: $light-color; 
+    background-color: $primary-color; 
   }
   
   
@@ -30,7 +30,7 @@ $dark-color: #744BFC;
 }
 
 ::ng-deep .p-datatable .p-datatable-thead > tr > th{
-    background-color: #ffffff;
+    background-color: $white-color;
 
 }
 
@@ -44,12 +44,12 @@ $dark-color: #744BFC;
 
 }
 ::ng-deep p-table .p-datatable .p-paginator .p-paginator-pages .p-paginator-page.p-highlight{
-    color: $dark-color;
+    color: $button-color;
 }
 
 
 ::ng-deep p-table .p-datatable p-paginator .p-paginator-bottom {
-    background-color: $light-color !important;
+    background-color: $primary-color !important;
     border: none;
     display: flex;
     justify-content: end;
@@ -68,7 +68,7 @@ $dark-color: #744BFC;
 
 //delete modal
 .submit-button {
-  background-color: #744BFC !important;
+  background-color: $button-color !important;
   border: none;
   color: white !important;
   font-size: 1rem;
@@ -114,12 +114,12 @@ $dark-color: #744BFC;
 }
 
 ::ng-deep p-table .p-datatable .p-sortable-column.p-highlight:hover{
-  background-color: #EFF2FF !important;
+  background-color: $primary-color !important;
   color: #343a40 !important;
 }
 
 ::ng-deep p-table .p-datatable .p-sortable-column.p-highlight:hover{
-  background-color: #EFF2FF !important;
+  background-color: $primary-color !important;
   color: #343a40 !important;
 }
 

@@ -1,5 +1,7 @@
+@import 'src/styles.scss';
+
 .navbar-link{
-    background-color: #ffffff;
+    background-color: $white-color;
     padding: 1rem 2rem;
     font-family: 'Poppins', sans-serif;
     font-size: 12px;

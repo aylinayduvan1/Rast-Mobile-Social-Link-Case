@@ -1,4 +1,5 @@
-/* src/app/components/search-history/search-history.component.scss */
+@import 'src/styles.scss';
+
 .recent-links {
   position: fixed;
   top: 0;
@@ -34,9 +35,9 @@
 }
 
 .clean-button {
-  background-color: #EFF2FF !important;
+  background-color: $primary-color !important;
   border: none;
-  color: #744BFC !important;
+  color: $button-color !important;
   font-size: 1rem;
   border-radius: 30px;
   height: 40px;

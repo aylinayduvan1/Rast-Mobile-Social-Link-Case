@@ -1,14 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-$primary-color: #EFF2FF;
-$button-color: #744BFC;
+@import 'src/styles.scss';
 
 :host {
   font-family: 'Poppins', sans-serif;
 }
 
 .link-content{
-  background-color: #EFF2FF; border-radius: 6px;
+  background-color: $primary-color; border-radius: 6px;
 }
 
 .form-title{
@@ -61,7 +58,7 @@ $button-color: #744BFC;
     }
 
     .submit-button {
-      background-color: #744BFC !important;
+      background-color: $button-color !important;
       border: none;
       color: white !important;
       font-size: 1rem;
@@ -76,9 +73,9 @@ $button-color: #744BFC;
     }
 
     .cancel-button {
-      background-color: #EFF2FF !important;
+      background-color: $primary-color !important;
       border: none;
-      color: #744BFC !important;
+      color: $button-color !important;
       font-size: 1rem;
       border-radius: 30px;
       width: 25%;
@@ -110,7 +107,7 @@ $button-color: #744BFC;
 
     
     .error-message {
-      color: #e74c3c;
+      color: $error-message;
       font-size: 0.875rem;
       padding-left: 1rem;
     }

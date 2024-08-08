@@ -1,7 +1,10 @@
+
+@import 'src/styles.scss';
+
 ::ng-deep .filter-button .p-button.p-button-icon-only {
   
     border-radius: 50%;
-    background-color: #ffffff !important;
+    background-color: $white-color !important;
     border: none;
     padding: 10px;
     font-size: 1.5em;
@@ -10,7 +13,7 @@
     width: 49px;
   
     .p-button-icon {
-      color: #744BFC !important;
+      color: $button-color !important;
     }
   }
   
@@ -28,7 +31,7 @@
   }
   
   .filter-options li.active {
-    background-color: #EFF2FF;
+    background-color: $primary-color;
     border-radius: 39px;
   }
   
