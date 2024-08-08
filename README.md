@@ -2,7 +2,7 @@
 
 ## Proje Tanımı ve Amacı
 
-Bu proje, kullanıcıların sosyal medya linklerini ve bu linklere ait bilgileri yönetebilecekleri bir projedir. Uygulama, atomic design prensiplerine uygun olarak geliştirilmiş ve directive, pipe, guard, resolver vb kullanımlarını içermektedir. Bu proje ile sosyal medya linkerli üzerinde CRUD işlemlerinin yapılması heflenmiştir.
+Bu proje, kullanıcıların sosyal medya linklerini ve bu linklere ait bilgileri yönetebilecekleri bir projedir. Uygulama, atomic design prensiplerine uygun olarak geliştirilmiş ve directive, pipe, guard, resolver vb kullanımlarını içermektedir. Bu proje ile sosyal medya linkerli üzerinde CRUD işlemlerinin yapılması hedeflenmiştir.
 
 ## Teknolojiler ve Araçlar
 
@@ -21,7 +21,17 @@ Frontend kısmında Angular, Bootstrap, PrimeNG, RxJS, TypeScript, HTML ve SCSS 
 3. MySQL veritabanını oluşturun ve yapılandırın:
 
    Proje içerisine Backup'ını eklediğim veri tabanımı MySql'inize import edebilirisiniz ya da aşağıdaki gibi
-   veritabanınızı ekleyebilirsiniz.
+   veritabanınızı ekleyebilirsiniz.MySql dosyasını kendi veritabanınıza import etmek için;
+
+   - backend / database içindeki sql dosyasını bilgisayarınza indiriniz.
+   - Üst menüden servera tıklayınız.
+   - Data import seçeneğini seçiniz.
+   - import seçeneklerninden 2.sine tıklayınız ve indiridiğiniz dosya yolu giriniz.
+   - new schema oluştuurnuz ve ardından 'Start İmport' butonuna tıklayınız.
+   - Schemas kısmında refresh all yapınız.Oluşturduğunuz schema içinde indiridğiniz tablolar eklenmiş olacak.
+   - use (verdiğiniz db ismi) çalıştırınız.
+   - SELECT \* FROM links; linkler tablosuna ulaşabilirsiniz.
+   - SELECT \* FROM users; kullanıcılar tablosuna ulaşabilirsiniz.
 
    ```sql " social_media_links veritabını oluşturunuz;"
    CREATE DATABASE social_media_links
@@ -33,6 +43,17 @@ Frontend kısmında Angular, Bootstrap, PrimeNG, RxJS, TypeScript, HTML ve SCSS 
    name VARCHAR(255) NOT NULL,
    url VARCHAR(255) NOT NULL,
    description TEXT);
+   ```
+
+   ```sql " links tablosunu oluşturunuz;"
+   CREATE TABLE users (
+   id INT AUTO_INCREMENT PRIMARY KEY,
+   username VARCHAR(255) NOT NULL UNIQUE,
+   password VARCHAR(255) NOT NULL)
+   ```
+
+   ```sql
+   INSERT INTO users (username, password) VALUES ('aylin', '123')
    ```
 
 4. Backend sunucusunu başlatın:
@@ -65,8 +86,8 @@ Proje, frontend ve backend olarak iki ana bileşenden oluşmaktadır. Frontend k
 
 Frontend, Atomic Design prensiplerine uygun olarak atom, molekül, organizma, şablon ve sayfa component'leri içerir:
 
-- **Atom Component'ler:** Button, Input
-- **Molekül Component'ler:** SearchBar, SocialButton
+- **Atom Component'ler:** Button, Input, FilterButton
+- **Molekül Component'ler:** SearchBar, SocialButton, LoginAnimation, VisitedLink
 - **Organizma Component'ler:** LoginForm, Navbar, Table
 - **Şablon Component'ler:** MainTemplate
 - **Sayfa Component'ler:** HomePage, LoginPage
