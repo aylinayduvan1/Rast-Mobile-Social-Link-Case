@@ -29,7 +29,7 @@ Frontend kısmında Angular, Bootstrap, PrimeNG, RxJS, TypeScript, HTML ve SCSS 
    - Üst menüden servera tıklayınız.
    - Data import seçeneğini seçiniz.
    - import seçeneklerninden 2.sine tıklayınız ve indiridiğiniz dosya yolu giriniz.
-   - new schema oluştuurnuz ve ardından 'Start İmport' butonuna tıklayınız.
+   - new schema oluşturunuz (social_media_links) ve ardından 'Start İmport' butonuna tıklayınız.
    - Schemas kısmında refresh all yapınız.Oluşturduğunuz schema içinde indiridğiniz tablolar eklenmiş olacak.
    - use (verdiğiniz db ismi) çalıştırınız.
    - SELECT \* FROM links; linkler tablosuna ulaşabilirsiniz.
