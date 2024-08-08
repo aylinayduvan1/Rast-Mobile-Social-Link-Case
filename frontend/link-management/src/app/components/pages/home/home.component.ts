@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth/auth.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-home',
@@ -9,6 +10,7 @@ import { AuthService } from '../../services/auth/auth.service';
 export class HomeComponent implements OnInit {
 
   constructor(private authService : AuthService) { }
+  public visitedHole$ = new BehaviorSubject<boolean>(true)
 
   lottieOptions: any;
 
@@ -24,4 +26,8 @@ export class HomeComponent implements OnInit {
  public async logout(){
   await this.authService.logout();
  }
+
+ public visited() {
+  this.visitedHole$.next(!this.visitedHole$.getValue());
+}
 }

@@ -22,8 +22,10 @@
   </ng-template>
 
   <ng-template pTemplate="body" let-link>
-    <tr>
-      <td>{{ link?.url }}</td>
+    <tr (click)="onRouteClick(link)">
+      <td>
+        <a [href]="link?.url" target="_blank">{{ link?.url }}</a>
+      </td>
       <td>{{ link?.name | uppercaseSocialName }}</td>
       <td>{{ link?.description }}</td>
       <td>
@@ -33,7 +35,7 @@
           type="button"
           icon="pi pi-trash"
           class="p-button-rounded p-button-text p-button-danger"
-          (click)="openDeleteModal(link?.id)"
+          (click)="openDeleteModal(link?.id); $event.stopPropagation()"
           style="margin-right: 10px"
         ></button>
         <button
@@ -42,7 +44,7 @@
           type="button"
           icon="pi pi-pencil"
           class="p-button-rounded p-button-text p-button-plain"
-          (click)="onOpenModal(link)"
+          (click)="onOpenModal(link); $event.stopPropagation()"
         ></button>
       </td>
     </tr>

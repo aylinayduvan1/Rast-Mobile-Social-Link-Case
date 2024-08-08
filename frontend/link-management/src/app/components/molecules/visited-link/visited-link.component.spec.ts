@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SearchHistoryComponent } from './search-history.component';
+import { SearchHistoryComponent } from './visited-link.component';
 
 describe('TableHeaderComponent', () => {
   let component: SearchHistoryComponent;

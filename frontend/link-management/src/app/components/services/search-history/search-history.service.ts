@@ -5,32 +5,30 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class SearchHistoryService {
-
-  private storageKey = 'searchHistory'; // LocalStorage'da saklanacak anahtar
-  private searchHistorySubject = new BehaviorSubject<string[]>(this.getSearchHistory());  // Arama geçmişinin güncel durumunu takip eden BehaviorSubject
+  private storageKey = 'visitedLinks';
+  private visitedLinksSubject = new BehaviorSubject<string[]>(this.getVisitedLinks());
 
   constructor() { }
 
-  public addSearchTerm(term: string): void {
-    const history = this.getSearchHistory();
-    
-    if (!history.includes(term)) {
-      history.push(term);
-      localStorage.setItem(this.storageKey, JSON.stringify(history));
-      this.searchHistorySubject.next(history);  // Güncellemeyi yayında
+  addVisitedLink(link: string): void {
+    const visitedLinks = this.getVisitedLinks();
+    if (!visitedLinks.includes(link)) {
+      visitedLinks.push(link);
+      localStorage.setItem(this.storageKey, JSON.stringify(visitedLinks));
+      this.visitedLinksSubject.next([...visitedLinks]);  // Array'i kopyalayarak güncelle
     }
   }
 
-  public getSearchHistory() {
-    return JSON.parse(localStorage.getItem(this.storageKey) || '[]');  // Eğer geçmiş yoksa boş dizi döndür
+  getVisitedLinks(): string[] {
+    return JSON.parse(localStorage.getItem(this.storageKey) || '[]');
   }
 
-  public clearHistory(): void {
+  clearVisitedLinks(): void {
     localStorage.removeItem(this.storageKey);
-    this.searchHistorySubject.next([]);  // Boş listeyi yayında
+    this.visitedLinksSubject.next([]);  // Boş listeyi yayında
   }
 
-  public getSearchHistoryObservable() {
-    return this.searchHistorySubject.asObservable();  // Observable döner
+  getVisitedLinksObservable() {
+    return this.visitedLinksSubject.asObservable();  // Observable döner
   }
 }

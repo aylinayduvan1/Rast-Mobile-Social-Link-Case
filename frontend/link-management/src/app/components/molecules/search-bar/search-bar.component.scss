@@ -75,7 +75,7 @@ $button-color: #744BFC;
 }
 
 .searchbar-input {
-  padding-right: 2.5rem; /* Sağdaki ikon için boşluk bırak */
+  padding-right: 2.5rem;
 }
 
 .clear-icon {
@@ -90,5 +90,17 @@ $button-color: #744BFC;
 }
 
 .clear-icon i {
-  font-size: 0.8rem; /* İkon boyutunu ayarlayın */
+  font-size: 0.8rem;
+}
+
+a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+a i {
+  font-size: 1.5rem; 
+  color: #ffffff; 
 }

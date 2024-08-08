@@ -1,4 +1,3 @@
-<app-search-history></app-search-history>
 <div class="col-12 table-header d-flex justify-content-between mb-2 p-0">
   <div class="search-filter-container d-flex align-items-center">
     <div class="p-inputgroup mr-2" style="width: 100%">
@@ -29,6 +28,11 @@
       (criteriaChanged)="onCriteriaChange($event)"
     >
     </app-filter-button>
+
+    <a class="ml-2" (click)="visited()">
+      <i class="pi pi-history"></i>
+    </a>
+    <app-visited-link *ngIf="!(visitedHole$ | async)"></app-visited-link>
   </div>
 
   <button

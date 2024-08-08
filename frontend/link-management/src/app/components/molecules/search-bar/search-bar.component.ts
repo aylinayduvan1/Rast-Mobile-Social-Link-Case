@@ -1,6 +1,6 @@
-// src/app/components/search-bar/search-bar.component.ts
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { SearchHistoryService } from '../../services/search-history/search-history.service';
+import { BehaviorSubject } from 'rxjs';
+;
 
 @Component({
   selector: 'app-search-bar',
@@ -13,20 +13,19 @@ export class SearchBarComponent {
   @Output() openModal = new EventEmitter<void>();
   @Output() searchTextChanged = new EventEmitter<{ text: string, criteria: string }>();
 
+  public visitedHole$ = new BehaviorSubject<boolean>(true)
+
   public searchText: string = '';
   public selectedCriteria: string = 'all'; 
+
   public searchOptions: { label: string, value: string }[] = [
     { label: 'Tümü', value: 'all' },
     { label: 'Link', value: 'url' },
     { label: 'İsim', value: 'name' },
   ];
 
-  constructor(private searchHistoryService: SearchHistoryService) {}
 
- public onSearch(): void {
-    if (this.searchText.trim()) { 
-      this.searchHistoryService.addSearchTerm(this.searchText.trim());
-    }
+  public onSearch(): void {
     this.searchTextChanged.emit({ text: this.searchText, criteria: this.selectedCriteria });
   }
 
@@ -35,12 +34,16 @@ export class SearchBarComponent {
     this.searchTextChanged.emit({ text: this.searchText, criteria: this.selectedCriteria });
   }
 
- public onOpenModal(): void {
+  public onOpenModal(): void {
     this.openModal.emit();
   }
 
   public onCriteriaChange(criteria: string): void {
     this.selectedCriteria = criteria;
     this.searchTextChanged.emit({ text: this.searchText, criteria: this.selectedCriteria });
+  }
+
+  public visited() {
+    this.visitedHole$.next(!this.visitedHole$.getValue());
   }
 }

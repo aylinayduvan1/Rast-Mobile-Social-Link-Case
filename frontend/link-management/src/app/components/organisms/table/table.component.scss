@@ -24,11 +24,25 @@ $dark-color: #744BFC;
     padding: 5px 0px 0px 16px ;
 }
 
+::ng-deep .p-datatable .p-datatable-tbody > tr > td> a {
+  color:black;
+  text-decoration: none;
+}
+
 ::ng-deep .p-datatable .p-datatable-thead > tr > th{
     background-color: #ffffff;
 
 }
 
+::ng-deep .p-datatable.p-datatable-scrollable > 
+.p-datatable-wrapper > .p-datatable-table > .p-datatable-thead, 
+.p-datatable.p-datatable-scrollable > .p-datatable-wrapper > 
+.p-datatable-table > .p-datatable-tfoot{
+  border-top-left-radius: 8px !important;
+  border-top-right-radius: 8px !important;
+
+
+}
 ::ng-deep p-table .p-datatable .p-paginator .p-paginator-pages .p-paginator-page.p-highlight{
     color: $dark-color;
 }

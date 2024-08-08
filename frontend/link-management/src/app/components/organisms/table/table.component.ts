@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { LinksService } from '../../services/link/links.service';
 import { Link } from 'src/app/models/links/links';
+import { SearchHistoryService } from '../../services/search-history/search-history.service';
 
 @Component({
   selector: 'app-table',
@@ -18,8 +19,14 @@ export class TableComponent {
 
   public isAcitve: boolean = false;
   private linkIdToDelete: number | null = null;
+  visitedLinks: string[] = [];
 
+  constructor(private searchHistoryService: SearchHistoryService) {}
   ngOnInit() {
+    this.searchHistoryService.getVisitedLinksObservable().subscribe(links => {
+      this.visitedLinks = links;
+    });
+
     this.list$.subscribe(links => {
       this.totalRecords = links.length;
     });
@@ -53,5 +60,11 @@ export class TableComponent {
       this.isAcitve = false;
       this.linkIdToDelete = null;    
     }
+  }
+
+
+  public onRouteClick(link: Link): void {
+    this.searchHistoryService.addVisitedLink(link.url);
+    window.open(link.url, '_blank'); // URL'ye yönlendirme
   }
 }

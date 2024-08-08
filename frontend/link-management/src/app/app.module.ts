@@ -18,7 +18,7 @@ import { InputComponent } from './components/atoms/input/input.component';
 import { ImageComponent } from './components/atoms/filter-button/filter-buttoncomponent';
 import { SocialButtonsComponent } from './components/molecules/social-buttons/social-buttons.component';
 import { SearchBarComponent } from './components/molecules/search-bar/search-bar.component';
-import { SearchHistoryComponent } from './components/molecules/search-history/search-history.component';
+import { VisitedLinkComponent } from './components/molecules/visited-link/visited-link.component';
 import { LoginAnimationComponent } from './components/molecules/login-animation/login-animationcomponent';
 import { NavbarComponent } from './components/organisms/navbar/navbar.component';
 import { TableComponent } from './components/organisms/table/table.component';
@@ -47,7 +47,7 @@ export function playerFactory() {
     ImageComponent,
     SocialButtonsComponent,
     SearchBarComponent,
-    SearchHistoryComponent,
+    VisitedLinkComponent,
     LoginAnimationComponent,
     NavbarComponent,
     TableComponent,
